@@ -1,0 +1,193 @@
+body {
+  background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+  color: rgb(68, 68, 68);
+}
+
+#page-logo a {
+  color: rgb(183, 230, 235);
+}
+
+header {
+  position: static;
+}
+
+header nav a {
+  color: rgb(183, 230, 235);
+}
+
+header nav a:hover {
+  background-color: rgb(183, 230, 235);
+  color: rgb(59, 59, 59);
+}
+
+#profile {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 750px;
+  background: linear-gradient(135deg, rgb(210, 230, 248), rgb(164, 209, 249));
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  text-align: center;
+}
+
+#contact span {
+  display: inline;
+  --underline-width-scale: calc(
+    var(--underline-width) / var(--underline-intrinsic-width)
+  );
+  padding: 0
+    calc(
+      var(--underline-padding-x) +
+        calc(var(--underline-cap-width) * var(--underline-width-scale))
+    );
+  box-decoration-break: clone;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      180deg,
+      var(--underline-color),
+      var(--underline-color)
+    ),
+    var(--cap-image-left), var(--cap-image-right);
+  background-position-x: calc(
+      var(--underline-cap-width) * var(--underline-width-scale)
+    ),
+    0, 100%;
+  background-position-y: calc(100% - var(--underline-offset-y) * -1);
+  background-size: calc(
+        100% -
+          calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)
+      )
+      calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px);
+}
+
+:root {
+  /* The intrinsic width of the underline stroke (in pixels). This is 
+     * the same as the height of the cap images. Don't specify the
+     * units! This is because of some of the calculations we do later on. */
+  --underline-intrinsic-width: 18;
+
+  /* The actual width of the underline stroke we want to render (in pixels).
+     * You can modify this, and the sizing and positioning should be calculated
+     * accordingly. Again, Don't specify the units! */
+  --underline-width: 16;
+
+  /* The colour used to draw the underline. It should match the colour
+     * used in the cap images... unfortunately we can't modify the SVG
+     * fill via CSS because it's a background image. */
+  --underline-color: #a1aaf1;
+
+  /* We need to know the width of the cap images so that we
+     * can position everything on the x axis accordingly. */
+  --underline-cap-width: 2px;
+
+  /* The border is positioned relative to the bottom of the line.
+     * We can move it upwards a little to create an overlap effect. */
+  --underline-offset-y: -7px;
+
+  /* The padding to add to the x axis. By default, the caps would be
+     * aligned with the beginning and end of the line. */
+  --underline-padding-x: 0.14em;
+
+  /* The cap images to use that form the left and right rounded
+     * shape. I guess these could be any shape, they don't
+     * necessarily have to be round 🙂.
+     */
+  --cap-image-left: url(https://files-d4s40otz1.now.sh/left.svg);
+  --cap-image-right: url(https://files-4vvqilj8v.now.sh/right.svg);
+}
+
+#contact h2 {
+  font-size: 48px;
+  margin: 0 auto;
+}
+
+#contact p {
+  margin: 0;
+  font-size: 18px;
+  padding: 30px;
+}
+
+#learn-more {
+  color: white;
+}
+
+#image {
+  height: 700px;
+  background-image: url("/images/back-img-profile.jpg");
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile-image {
+  height: 500px;
+  width: 400px;
+  border: 13px solid white;
+  box-shadow: 1px 1px 2px rgb(58, 58, 58);
+  object-fit: cover;
+}
+
+#contact ul {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+a {
+  text-decoration: none;
+  padding: 20px 60px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.work-btn {
+  background-color: rgb(79, 151, 214);
+  color: white;
+}
+
+.work-btn:hover {
+  background-color: rgb(174, 191, 206);
+  color: rgb(58, 58, 58);
+}
+
+.learn-btn {
+  background-color: rgb(157, 202, 242);
+  color: rgb(58, 58, 58);
+}
+
+.learn-btn:hover {
+  background-color: rgb(174, 191, 206);
+  color: white;
+}
+
+#learn-more {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#playh2 {
+  font-style: italic;
+}
+
+#learn-more h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+#learn-more p {
+  padding: 30px;
+}
